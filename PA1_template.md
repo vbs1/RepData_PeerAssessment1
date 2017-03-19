@@ -91,7 +91,7 @@ ggplot(steps, aes(x = steps)) +
   labs(title = "Histogram of Steps per day", x = "Steps per day", y = "Frequency")
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
+![plot of chunk Histogram_representation_of_steps_per_day](figure/Histogram_representation_of_steps_per_day-1.png)
 
 Calculate and report the mean and median of the total number of steps taken per day
 
@@ -133,7 +133,7 @@ ggplot(interval, aes(x=interval, y=steps)) +
   geom_line(color = "firebrick")
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
+![plot of chunk 5_minute_interval](figure/5_minute_interval-1.png)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps? Imputing missing values
 
@@ -192,7 +192,7 @@ ggplot(data.steps, aes(x = steps)) +
   labs(title = "Histogram of Steps per day, including missing values", x = "Steps per day", y = "Frequency")
 ```
 
-![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19-1.png)
+![plot of chunk Histogram_of_steps_per_day_including_missing_Values](figure/Histogram_of_steps_per_day_including_missing_Values-1.png)
 Calculate the mean and median steps with the filled in values:
 
 ```r
@@ -253,6 +253,11 @@ s <- ggplot(data.interval, aes(x=interval, y=steps, color = weektype)) +
 print(s)
 ```
 
-![plot of chunk unnamed-chunk-25](figure/unnamed-chunk-25-1.png)
+![plot of chunk time_series_plot_of_the_5-minute_interval](figure/time_series_plot_of_the_5-minute_interval-1.png)
 
+Generate Figures and .md file
+
+```r
+#knit(input = "PA1_template.Rmd", output="PA1_template.md")
+```
 

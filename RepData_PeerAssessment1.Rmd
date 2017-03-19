@@ -57,7 +57,7 @@ steps <- data %>%
   print
 ```
 Histogram representation of steps per day
-```{r}
+```{r Histogram_representation_of_steps_per_day}
 ggplot(steps, aes(x = steps)) +
   geom_histogram(fill = "blue", binwidth = 1000) +
   labs(title = "Histogram of Steps per day", x = "Steps per day", y = "Frequency")
@@ -85,7 +85,7 @@ interval <- data %>%
   group_by(interval) %>%
   summarize(steps = mean(steps))
 ```
-```{r}
+```{r 5_minute_interval}
 ggplot(interval, aes(x=interval, y=steps)) +
   geom_line(color = "firebrick")
 ```
@@ -127,7 +127,7 @@ data.steps <- data %>%
 ```
 generate histogram
 
-```{r}
+```{r Histogram_of_steps_per_day_including_missing_Values}
 ggplot(data.steps, aes(x = steps)) +
   geom_histogram(fill = "blue", binwidth = 1000) +
   labs(title = "Histogram of Steps per day, including missing values", x = "Steps per day", y = "Frequency")
@@ -158,7 +158,7 @@ get overview of changes to dataset
 head(data)
 ```
 Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average #number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub #repository to see an example of what this plot should look like using simulated data.
-```{r}
+```{r time_series_plot_of_the_5-minute_interval}
 data.interval <- data %>%
   group_by(interval, weektype) %>%
   summarise(steps = mean(steps))
@@ -168,4 +168,8 @@ s <- ggplot(data.interval, aes(x=interval, y=steps, color = weektype)) +
 print(s)
 ```
 
+Generate Figures and .md file
+```{r}
+#knit(input = "RepData_PeerAssessment1.rmd", output="RepData_PeerAssessment1.md")
+```
 
